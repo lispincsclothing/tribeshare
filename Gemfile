@@ -1,5 +1,11 @@
 source 'https://rubygems.org'
 
+#app-specific changes
+ruby "2.2.3"
+#heroku
+group :production do
+  gem 'rails_12factor'
+end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
