@@ -6,6 +6,11 @@ ruby "2.2.3"
 group :production do
   gem 'rails_12factor'
 end
+# installing #devise and omniauth
+gem 'therubyracer'
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
