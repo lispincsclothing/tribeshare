@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 
 #app-specific changes
 ruby "2.2.3"
+
+# mastercard
+gem 'simplify', '~> 1.1.2'
 #heroku
 group :production do
   gem 'rails_12factor'
