@@ -13,6 +13,8 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 #figaro, forget dotenv
 gem "figaro"
+# mastercard simplify commerce
+gem 'simplify', '~> 1.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
