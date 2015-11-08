@@ -20,3 +20,18 @@ minimum_contribution:100.00,
 owner_id:1,
 custodian_id:1,
 rfid:'tbd')
+
+Campaign.create!(
+ header:'Leather & Chain Halter Belt SEXXXY',
+ cost:300.00,
+ title:'Willow leather & chain Halter Neck & Belt',
+ picture1:'halter1.jpg',
+ picture2:'halter2.jpg',
+ picture1_title:'Halter Neck & Belt by Wilow',
+ picture2_title: 'leather & chain Halter Neck & Belt',
+ description:"Chic & sexy - let's do this people! Check out this cool body jewelry from my favorite Aussie label - would be amazing to wear. If you are nervous about showing the full harness look you can wear it under a jacket (and whip it off when you feel fierce that night ;-)",
+ expiration:Date.today+1.week,
+ minimum_contribution:50.00,
+ owner_id:1,
+ custodian_id: 1,
+ rfid:'1')
