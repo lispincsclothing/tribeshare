@@ -1,5 +1,6 @@
 
 $(document).ready(function() {
+  console.log("paymentjs loaded");
     $("#simplify-payment-form").on("submit", function() {
         // Disable the submit button
         $("#process-payment-btn").attr("disabled", "disabled");
