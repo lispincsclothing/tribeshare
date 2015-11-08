@@ -11,8 +11,60 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <header class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 ">
+            <div class="navbar-header">
+              <button class="navbar-toggle menu-button" data-target="#myNavbar" data-toggle="collapse" type="button">
+                <span class="glyphicon glyphicon-align-justify"></span>
+              </button>
+              <a class="navbar-brand logo" href="/">TribalShare</a>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <nav class="collapse navbar-collapse" id="myNavbar" role="navigation">
+              <ul class="nav navbar-nav navbar-right menu">
+                <li>
+                  <a class="page-nav " href="/">Home</a>
+                </li>
+                <li>
+                  <a class="page-nav" href="/campaigns">New Selections</a>
+                </li>
+                <li>
+                    <% if user_signed_in? %>
+                  <a class="page-nav" href= "/users/<%=current_user.id%>"> My items</a>
+                  <%else%>
+
+                  <a class="page-nav disabled" role="presentation" href= "#"> My items</a>
+                     <% end %>
+                </li>
+
+
+
+                <li class="red-text-nav">
+                    <% if current_user %>
+                     <%= image_tag(current_user.image, :class => "round")%><%= current_user.name %>
+                </li>
+                <li>
+                      <%= link_to "Sign out", destroy_user_session_path, :method => :delete  %>
+                    <% else %>
+                      <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook)%>
+                    <% end %>
+                  </li>
+                  <li>
+                    <span class="notice"><%= notice %></span>
+                    <span><class="alert"><%= alert %></span>
+              </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+<div class="top_spacer">
+</div>
+
 <%= yield %>
 <div class="container-fluid notes">
   <div class="row">
