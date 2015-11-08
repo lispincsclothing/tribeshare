@@ -56,23 +56,22 @@
 </div>
 
 <div class="container-fluid features">
-  <div class="container " id="answer_list">
-
+  <div class="container text-center features-text" id="answer_list">
+<h2>  Your Items & Custody</h2>
   </div>
 </div>
 
-<div class="campaigns" data-campaigns="<%= @campaigns.to_json %>">
+
+<div class="users" data-users="<%= User.all.to_json %>">
 </div>
 
 <div class="container" id="DocumentResults">
-
 </div>
 
 <div class="container-fluid ">
   <div class="container">
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12 spacer"></div>
-      <button type="button" name="button" class="new_a">click here</button>
     </div>
   </div>
 </div>
@@ -80,18 +79,23 @@
 
 
 <script id="new-answer-form" type="text/x-handlebars-template">
-  {{#each this}}
+  {{#this}}
     <div class="row">
       <div class="col-md-2">
       <div class="iconing3">
             <img src="/assets/{{image}}" class="roundlg" />
             </div>
       </div>
-      <div class="col-md-10 icon-text-box">
-        <p>{{header}} in custody of: <span>{{custodian_name}}</span></p>
 
+      <div class="col-md-3 icon-text-box">
+        <p>{{header}} in custody of: </p>
       </div>
-
+          <div class="col-md-1 icon-text-box">
+        <p><span>{{custodian_name}}</span></p>
+      </div>
+      <div class="col-md-2">
+          <img src="{{custodian_img}}" class="roundlg" />
+      </div>
     </div>
-    {{/each}}
+    {{/this}}
     </script>

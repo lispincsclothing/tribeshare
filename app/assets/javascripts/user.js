@@ -1,23 +1,18 @@
 
-$(document).ready(function() {
-console.log("user.js loaded!")
 
-  var bindAnswerEvents = function() {
-    $('.new_a').on('click', createNewAnswer);
-
-};
+$(function() {
+  setTimeout(createNewAnswer, 5000);
+});
 
 
-var createNewAnswer = function(event) {
-  console.log("you clicked me!")
-    event.preventDefault();
+
+var createNewAnswer = function() {
     $.ajax({
       url: '/campaigns',
       type: 'GET',
       dataType: 'json'
-    })
-        .done(function(response) {
-          console.log("success", response);
+    }).done(function(response) {
+          // console.log("success", response);
             if (response != undefined) {
                 renderNewAnswer(response);
                 console.log(response);
@@ -28,16 +23,18 @@ var createNewAnswer = function(event) {
         .fail(function(response) {
             console.log("error", response);
         });
+
+        setTimeout(createNewAnswer, 5000);
 };
 
 var renderNewAnswer = function(response) {
     console.log(response);
     var html = $('#new-answer-form').html();
     var generateNewAnswerForm = Handlebars.compile(html);
-    $('#DocumentResults').append(generateNewAnswerForm(response));
+    $('#DocumentResults').html(generateNewAnswerForm(response));
 };
-bindAnswerEvents();
-});
+
+
 
 // $(function() {
 //   setTimeout(updateMessages, 5000);
