@@ -9,6 +9,11 @@
         <%= text_field_tag('name', nil, maxlength: 60, autocomplete: 'off', autofocus: true) %>
       </div>
 
+      <div>
+        <%= label_tag('email', 'Email:') %>
+        <%= text_field_tag('email', nil, maxlength: 60, autocomplete: 'off', autofocus: true, value: current_user.email) %>
+      </div>
+
         <div>
           <%= label_tag('cc-number', 'Credit Card Number:') %>
           <%= text_field_tag('cc-number', nil, maxlength: 20, autocomplete: 'off', autofocus: true) %>

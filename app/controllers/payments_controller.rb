@@ -48,6 +48,7 @@ class PaymentsController < ApplicationController
           token: params['simplifyToken'],
           description: 'Simplify Rails Example',
           currency: 'USD'})
+
       @message = payment['paymentStatus']
       end
       if payment['paymentStatus'] == 'APPROVED'
