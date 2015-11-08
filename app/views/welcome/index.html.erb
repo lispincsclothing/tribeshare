@@ -74,41 +74,19 @@
     <div class="row" id="starts">
       <div class="col-md-12 col-sm-12 col-xs-12 work-list">
         <h2 class="text-center portfolio-text">Some current selections ... </h2>
-
+<% @campaigns.each do |campaign| %>
         <div class="col-md-4 col-sm-6 col-xs-12 work-space">
-          <a data-lightbox="image-1" href="<%= asset_path( 'tribe.jpg' ) %>">
+          <a data-lightbox="image-1" href=<%= asset_path(campaign.picture1) %> >
             <div class="featured-img">
-              <img src="<%= asset_path( 'tribe.jpg' ) %>" />
+              <img src= <%= asset_path(campaign.picture1) %> />
             </div>
             <div class="image-hover">
               <i class="glyphicon glyphicon-eye-open"></i>
             </div>
-            <h3>Each loop item ...</h3>
+            <h3> <%=  campaign.header %> </h3>
           </a>
         </div>
-
-        <div class="col-md-4 col-sm-6 col-xs-12 work-space">
-          <a data-lightbox="image-1" href="<%= asset_path( 'tribe.jpg' ) %>">
-            <div class="featured-img">
-              <img src="<%= asset_path( 'tribe.jpg' ) %>" />
-            </div>
-            <div class="image-hover">
-              <i class="glyphicon glyphicon-eye-open"></i>
-            </div>
-            <h3>Each loop item ...</h3>
-          </a>
-        </div>
-        <div class="col-md-4 col-sm-6 col-xs-12 work-space">
-          <a data-lightbox="image-1" href="<%= asset_path( 'tribe.jpg' ) %>">
-            <div class="featured-img">
-              <img src="<%= asset_path( 'tribe.jpg' ) %>" />
-            </div>
-            <div class="image-hover">
-              <i class="glyphicon glyphicon-eye-open"></i>
-            </div>
-            <h3>Each loop item ...</h3>
-          </a>
-        </div>
+        <% end %>
 
 
       </div>

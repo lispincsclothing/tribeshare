@@ -42,7 +42,7 @@
       <%= form_tag({controller: 'payments', action: 'create'}, method: :post, id: 'simplify-payment-form') do %>
       <div>
         <%= label_tag('amount', 'Amount:') %>
-        <%= text_field_tag('amount', nil, maxlength: 20, autocomplete: 'off', autofocus: true) %>
+        <%= text_field_tag('amount', nil, maxlength: 20, autocomplete: 'off', autofocus: true, min: @campaign.minimum_contribution, value: @campaign.minimum_contribution.to_i) %>
       </div>
 
         <div>
@@ -61,18 +61,21 @@
         <%= submit_tag('Process Payment', id: 'process-payment-btn') %>
       <% end %>
       <% else  %>
-      show this
+
 
       <%= form_tag({controller: 'payments', action: 'create'}, method: :post, id: 'simplify-payment-form') do %>
       <div>
         <%= label_tag('amount', 'Amount:') %>
-        <%= text_field_tag('amount', nil, maxlength: 20, autocomplete: 'off', autofocus: true) %>
+        <%= text_field_tag('amount', nil, maxlength: 20, autocomplete: 'off', autofocus: true, min: @campaign.minimum_contribution, value: @campaign.minimum_contribution.to_i) %>
       </div>
 
         <%= submit_tag('Charge my card on file', id: 'process-saved-payment-btn') %>
       <% end %>
       <% end %>
 
+  </div>
+  <div class="col-md-2  col-sm-6 col-xs-12 red-text text-center ">
+      <%= number_to_currency @campaign.minimum_contribution %> min
   </div>
 </div>
 </div>

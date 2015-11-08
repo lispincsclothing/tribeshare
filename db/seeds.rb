@@ -36,21 +36,6 @@ Campaign.create!(
  custodian_id: 1,
  rfid:'1')
 
-
- Campaign.create!(
- header:'Exclusive Liberty UK silk scarf',
- cost:790.00,
- title:"Rubens' bouquet silk scarf by Liberty UK",
- picture1:'liberty1.jpg',
- picture2:'liberty2.jpg',
- picture1_title:"Rubens' silk scarf by Liberty",
- picture2_title: 'Perfect to dress up all black outfit',
- description:"Liberty UK scarf => A luxurious homage to the Dutch masters, this Liberty London scarf collection brings back pieces from the design archive to an exciting new finish. Named after the great Peter Paul Rubens, this vibrant piece showcases a bouquet with colourful paint splashes. Double layered with silk chiffon and silk satin, this shawl is a superbly soft rendition of historical style.",
- expiration:Date.today+1.week,
- minimum_contribution:90.00,
- owner_id:1,
- rfid:'1')
-
  Campaign.create!(
  header:'Suqqu eyeshadow compact',
  cost:70.00,
@@ -79,4 +64,16 @@ Campaign.create!(
  owner_id:1,
  rfid:'1')
 
- 
+ Campaign.create!(
+ header:'Exclusive Liberty UK silk scarf',
+ cost:790.00,
+ title:"Rubens' bouquet silk scarf by Liberty UK",
+ picture1:'liberty1.jpg',
+ picture2:'liberty2.jpg',
+ picture1_title:"Rubens' silk scarf by Liberty",
+ picture2_title: 'Perfect to dress up all black outfit',
+ description:"Liberty UK scarf => A luxurious homage to the Dutch masters, this Liberty London scarf collection brings back pieces from the design archive to an exciting new finish. Named after the great Peter Paul Rubens, this vibrant piece showcases a bouquet with colourful paint splashes. Double layered with silk chiffon and silk satin, this shawl is a superbly soft rendition of historical style.",
+ expiration:Date.today+1.week,
+ minimum_contribution:90.00,
+ owner_id:1,
+ rfid:'1')
