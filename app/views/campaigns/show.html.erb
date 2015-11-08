@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Header:</strong>
+  <%= @campaign.header %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @campaign.cost %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @campaign.title %>
+</p>
+
+<p>
+  <strong>Picture1:</strong>
+  <%= @campaign.picture1 %>
+</p>
+
+<p>
+  <strong>Picture2:</strong>
+  <%= @campaign.picture2 %>
+</p>
+
+<p>
+  <strong>Picture1 title:</strong>
+  <%= @campaign.picture1_title %>
+</p>
+
+<p>
+  <strong>Picture2 title:</strong>
+  <%= @campaign.picture2_title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @campaign.description %>
+</p>
+
+<p>
+  <strong>Expiration:</strong>
+  <%= @campaign.expiration %>
+</p>
+
+<p>
+  <strong>Minimum contribution:</strong>
+  <%= @campaign.minimum_contribution %>
+</p>
+
+<p>
+  <strong>Rfid:</strong>
+  <%= @campaign.rfid %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @campaign.owner %>
+</p>
+
+<p>
+  <strong>Custodian:</strong>
+  <%= @campaign.custodian %>
+</p>
+
+<%= link_to 'Edit', edit_campaign_path(@campaign) %> |
+<%= link_to 'Back', campaigns_path %>
