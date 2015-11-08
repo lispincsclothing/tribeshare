@@ -17,4 +17,5 @@
 //= require bootstrap.min
 //= require jquery.waypoints.min
 //= require jquerycountto
-//= require lightbox.min
+//= require payments.coffee.js
+//= require welcome.coffee.js

@@ -1,5 +1,89 @@
-<h1>New Payment</h1>
 
-<%= render 'form' %>
+<div class="container-fluid">
+<div class="row">
+  <div class="col-md-12  spacer green">
+  </div>
+</div>
+</div>
 
-<%= link_to 'Back', payments_path %>
+
+
+<!-- photo images & call to action  -->
+<div class="container-fluid " >
+  <div class="container">
+    <div class="row" >
+      <div class="col-md-12 col-sm-12 col-xs-12 work-list">
+        <h2 class="text-center portfolio-text"><%= @campaign.title %></h2>
+
+        <div class="col-md-4 col-sm-6 col-xs-12 work-space">
+          <a data-lightbox="image-1" href=<%=asset_path(@campaign.picture1)%>>
+            <div class="featured-img">
+              <img src="<%= asset_path(@campaign.picture1) %>"/>
+            </div>
+            <div class="image-hover">
+              <i class="glyphicon glyphicon-eye-open"></i>
+            </div>
+            <h3><%= @campaign.picture1_title %></h3>
+          </a>
+        </div>
+
+
+        <div class="col-md-8 col-sm-6 col-xs-12 work-space">
+          <a href="#">
+            <h3> You are buying into this experience</h3></a>
+        </div>
+
+
+<div class="col-md-8 col-sm-6 col-xs-12 work-space">
+    <div >
+
+      <% if current_user.mastercard_id == nil %>
+
+      <%= form_tag({controller: 'payments', action: 'create'}, method: :post, id: 'simplify-payment-form') do %>
+      <div>
+        <%= label_tag('amount', 'Amount:') %>
+        <%= text_field_tag('amount', nil, maxlength: 20, autocomplete: 'off', autofocus: true) %>
+      </div>
+
+        <div>
+          <%= label_tag('cc-number', 'Credit Card Number:') %>
+          <%= text_field_tag('cc-number', nil, maxlength: 20, autocomplete: 'off', autofocus: true) %>
+        </div>
+        <div>
+          <%= label_tag('cc-cvc', 'CVC:') %>
+          <%= text_field_tag('cc-cvc', nil, maxlength: 4, autocomplete: 'off') %>
+        </div>
+        <div>
+          <%= label_tag('cc-exp-month', 'Expiry Date:') %>
+          <%= select_month(Date.new(Date.today.year, 1).beginning_of_month, {use_two_digit_numbers: true}, {id: 'cc-exp-month'}) %>
+          <%= select_year(Date.today, {start_year: Date.today.year, end_year: Date.today.year+10}, {id: 'cc-exp-year'}) %>
+        </div>
+        <%= submit_tag('Process Payment', id: 'process-payment-btn') %>
+      <% end %>
+      <% else  %>
+      show this
+
+      <%= form_tag({controller: 'payments', action: 'create'}, method: :post, id: 'simplify-payment-form') do %>
+      <div>
+        <%= label_tag('amount', 'Amount:') %>
+        <%= text_field_tag('amount', nil, maxlength: 20, autocomplete: 'off', autofocus: true) %>
+      </div>
+
+        <%= submit_tag('Charge my card on file', id: 'process-saved-payment-btn') %>
+      <% end %>
+      <% end %>
+
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="container-fluid">
+<div class="row">
+  <div class="col-md-12  spacer green">
+  </div>
+</div>
+</div>

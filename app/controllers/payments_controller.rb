@@ -14,6 +14,7 @@ class PaymentsController < ApplicationController
 
   # GET /payments/new
   def new
+    @campaign = Campaign.where(id: params[:campaign_id]).first
     @payment = Payment.new
   end
 
@@ -24,17 +25,31 @@ class PaymentsController < ApplicationController
   # POST /payments
   # POST /payments.json
   def create
-    @payment = Payment.new(payment_params)
+    # id = current_user.mastercard_id
+    @campaign = Campaign.find(params[:campaign_id])
+    if current_user.mastercard_id !=nil
+      customer = Simplify::Customer.find(current_user.mastercard_id)
 
-    respond_to do |format|
-      if @payment.save
-        format.html { redirect_to @payment, notice: 'Payment was successfully created.' }
-        format.json { render :show, status: :created, location: @payment }
+        payment = Simplify::Payment.create({
+            amount: params['amount'].to_i*100,
+            key: ENV['simplify_public_key'],
+            description: 'customer saved pay',
+            customer: customer['id'],
+            currency: 'USD'})
+        #
+        puts @message = payment['paymentStatus']
+
       else
-        format.html { render :new }
-        format.json { render json: @payment.errors, status: :unprocessable_entity }
+        puts "params", params.inspect
+        payment = Simplify::Payment.create({
+          key: ENV['simplify_public_key'],
+          amount: params['amount'].to_i*100,
+          token: params['simplifyToken'],
+          description: 'Simplify Rails Example',
+          currency: 'USD'})
+      @message = payment['paymentStatus']
       end
-    end
+        redirect_to campaign_path(@campaign)
   end
 
   # PATCH/PUT /payments/1
