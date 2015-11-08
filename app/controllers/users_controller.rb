@@ -15,12 +15,12 @@ class UsersController < ApplicationController
   end
 
   def storepayment
-    # puts "hello key", ENV['simplify_public_key']
-    # puts "hello privatekey", ENV['simplify_private_key']
+    puts "hello key", ENV['simplify_public_key']
+    puts "hello privatekey", ENV['simplify_private_key']
 
     customer = Simplify::Customer.create({
         "email" => "newestcustomer@yahoo.com",
-        "key" =>ENV['simplify_public_key'],
+        "key" => ENV['simplify_public_key'],
         "name" => "Customer3 Customer3",
         "card" => {
            "expMonth" => "11",
@@ -46,7 +46,7 @@ class UsersController < ApplicationController
 
     puts "use_id", use_id = customer['id']
      current_user.update(mastercard_id: customer['id'])
-      # puts "Customer", customer.inspect
+      redirect_to root_path
   end
 
 

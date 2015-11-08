@@ -25,7 +25,6 @@ class PaymentsController < ApplicationController
   # POST /payments
   # POST /payments.json
   def create
-    # id = current_user.mastercard_id
     @campaign = Campaign.find(params[:campaign_id])
     if current_user.mastercard_id !=nil
       customer = Simplify::Customer.find(current_user.mastercard_id)
@@ -54,7 +53,7 @@ class PaymentsController < ApplicationController
         @message = payment['paymentStatus']
         Payment.create!(user_id: current_user.id, campaign_id: params["campaign_id"] , amount:payment['amount'].to_i/100)
         redirect_to campaign_path(@campaign)
-      end 
+      end
   end
 
   # PATCH/PUT /payments/1

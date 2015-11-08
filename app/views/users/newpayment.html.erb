@@ -1,42 +1,30 @@
-<h1>Payment#index</h1>
-<%= form_tag({controller: 'users', action: 'storepayment'}, method: :post, id: 'simplify-payment-form') do %>
-<div>
-  <%= label_tag('name', 'Name:') %>
-  <%= text_field_tag('name', nil, maxlength: 60, autocomplete: 'off', autofocus: true) %>
-</div>
+<div class="container-fluid features" id="love-story">
+  <div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Store your card details</h1>
+      <%= form_tag({controller: 'users', action: 'storepayment'}, method: :post, id: 'simplify-payment-form') do %>
+      <div>
+        <%= label_tag('name', 'Name:') %>
+        <%= text_field_tag('name', nil, maxlength: 60, autocomplete: 'off', autofocus: true) %>
+      </div>
 
-  <div>
-    <%= label_tag('cc-number', 'Credit Card Number:') %>
-    <%= text_field_tag('cc-number', nil, maxlength: 20, autocomplete: 'off', autofocus: true) %>
-  </div>
-  <div>
-    <%= label_tag('cc-cvc', 'CVC:') %>
-    <%= text_field_tag('cc-cvc', nil, maxlength: 4, autocomplete: 'off') %>
-  </div>
-  <div>
-    <%= label_tag('cc-exp-month', 'Expiry Date:') %>
-    <%= select_month(Date.new(Date.today.year, 1).beginning_of_month, {use_two_digit_numbers: true}, {id: 'cc-exp-month'}) %>
-    <%= select_year(Date.today, {start_year: Date.today.year, end_year: Date.today.year+10}, {id: 'cc-exp-year'}) %>
-  </div>
-  <%= submit_tag('Save My Card Details', id: 'store-payment-btn') %>
-<% end %>
-<!-- <script type="text/javascript"
-        src="https://www.simplify.com/commerce/simplify.pay.js"></script> -->
-<!-- <button data-sc-key="sbpb_ZDU4M2E5OTUtZjFmOS00YjhmLTgzNzUtOTcyOWMxMTY0N2U0"
-        data-name="Jasmine Green Tea"
-        data-description="Smooth tea with a rich jasmine bouquet"
-        data-reference="99999"
-        data-amount="3000"
-        data-color="#12B830">
-        Buy Now
-</button>
-<script type="text/javascript"
-        src="https://www.simplify.com/commerce/simplify.pay.js"></script>
-<iframe name="my-hosted-form"
-        data-sc-key="YOUR_HOSTED_PAYMENTS_ENABLED_PUBLIC_KEY"
-        data-name="Jasmine Green Tea"
-        data-description="Smooth tea with a rich jasmine bouquet"
-        data-reference="99999"
-        data-amount="3000"
-        data-color="#12B830">
-</iframe> -->
+        <div>
+          <%= label_tag('cc-number', 'Credit Card Number:') %>
+          <%= text_field_tag('cc-number', nil, maxlength: 20, autocomplete: 'off', autofocus: true) %>
+        </div>
+        <div>
+          <%= label_tag('cc-cvc', 'CVC:') %>
+          <%= text_field_tag('cc-cvc', nil, maxlength: 4, autocomplete: 'off') %>
+        </div>
+        <div>
+          <%= label_tag('cc-exp-month', 'Expiry Date:') %>
+          <%= select_month(Date.new(Date.today.year, 1).beginning_of_month, {use_two_digit_numbers: true}, {id: 'cc-exp-month'}) %>
+          <%= select_year(Date.today, {start_year: Date.today.year, end_year: Date.today.year+10}, {id: 'cc-exp-year'}) %>
+        </div>
+        <%= submit_tag('Save My Card Details', id: 'store-payment-btn') %>
+      <% end %>
+</div>
+</div>
+</div>
+</div>

@@ -15,7 +15,7 @@
   <header class="header">
       <div class="container">
         <div class="row">
-          <div class="col-md-4 ">
+          <div class="col-md-3 ">
             <div class="navbar-header">
               <button class="navbar-toggle menu-button" data-target="#myNavbar" data-toggle="collapse" type="button">
                 <span class="glyphicon glyphicon-align-justify"></span>
@@ -23,7 +23,7 @@
               <a class="navbar-brand logo" href="/">TribalShare</a>
             </div>
           </div>
-          <div class="col-md-8">
+          <div class="col-md-9">
             <nav class="collapse navbar-collapse" id="myNavbar" role="navigation">
               <ul class="nav navbar-nav navbar-right menu">
                 <li>
@@ -43,9 +43,13 @@
 
 
 
-                <li class="red-text-nav">
+
                     <% if current_user %>
-                     <%= image_tag(current_user.image, :class => "round")%><%= current_user.name %>
+                    <li class="red-text-nav ">
+                     <%= image_tag(current_user.image, :class => "round")%>
+                </li>
+                <li>
+                  <a href="/users/<%= current_user.id %>/storedpayment" > <%= current_user.name %> </a>
                 </li>
                 <li>
                       <%= link_to "Sign out", destroy_user_session_path, :method => :delete  %>
@@ -53,10 +57,10 @@
                       <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook)%>
                     <% end %>
                   </li>
-                  <li>
+                  <!-- <li>
                     <span class="notice"><%= notice %></span>
                     <span><class="alert"><%= alert %></span>
-              </li>
+              </li> -->
               </ul>
             </nav>
           </div>
