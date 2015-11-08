@@ -9,7 +9,9 @@ class CampaignsController < ApplicationController
     @campaigns = Campaign.where(live:false)
     respond_to do |format|
         format.html
-        format.json { render :json => @campaigns.to_json }
+        format.json do
+          render :json => @campaigns.map {|campaign| {:header => campaign.header, :name => campaign.custodian.name}}
+        end
     end
   end
 

@@ -19,3 +19,4 @@
 //= require jquerycountto
 //= require payments.coffee.js
 //= require welcome.coffee.js
+//= require handlebars
