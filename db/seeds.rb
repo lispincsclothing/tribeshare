@@ -37,6 +37,22 @@ Campaign.create!(
  rfid:'1')
 
  Campaign.create!(
+ header:'Elena Miro Sparkling Cardigan US size 16',
+ cost:750,
+ title:"ELENA MIRO SPARKLING CARDIGAN",
+ picture1:'elena1.jpg',
+ picture2:'elena2.jpg',
+ picture1_title:"hundreds of delicate sequins",
+ picture2_title: 'Beautiful fabrication',
+ description:"Finally - designer wear in my size! This is straight off the Italian catwalk and I am keen to try it in size L (US 16). Interwoven with hundreds of delicate sequins, this Elena Miro cardigan is a special piece which shimmers beautifully as it catches the light. Contrast your textures by team with a pleated skirt for a glamorous evening ensemble.
+ ",
+ expiration:Date.today+1.week,
+ minimum_contribution:90.00,
+ owner_id:1,
+ rfid:'1')
+
+
+ Campaign.create!(
  header:'Suqqu eyeshadow compact',
  cost:70.00,
  title:"Not available in USA Suqqu eyeshadow",
@@ -49,6 +65,8 @@ Campaign.create!(
  minimum_contribution:7.00,
  owner_id:1,
  rfid:'1')
+
+
 
  Campaign.create!(
  header:'Montecristi hat from Napa Valley',
@@ -77,3 +95,52 @@ Campaign.create!(
  minimum_contribution:90.00,
  owner_id:1,
  rfid:'1')
+
+ Campaign.create!(
+ header:'Beaded Caftan - can be worn long & loose or short & tight...',
+ cost:600.00,
+ title:"Camilla Printed Beaded Caftan ",
+ picture1:'kaftan1.jpg',
+ picture2:'kaftan2.jpg',
+ picture1_title:"Long & Elegant",
+ picture2_title: 'Or cheeky and short',
+ description:"Camilla is a famous Australian designer of beaded caftans - this is gorgeous. It is also one size fits all!!! You can wear it long and loose and elegant ('broads with drinks anyone!?'). Or there are a million ways to tie it so it can be as sexy and short as you like. I think it would be a great item to share around & adventure in!!!",
+ expiration:Date.today+1.week,
+ minimum_contribution:50.00,
+ owner_id:1,
+ rfid:'1',
+ live: true)
+
+ Campaign.create!(
+ header:'Alice Temperley Clutch Bag ',
+ cost:250,
+ title:"Alice Temperley Flutura clutch bag ",
+ picture1:'alice1.jpg',
+ picture2:'alice.jpg',
+ picture1_title:"Temperley Flutura clutch bag",
+ picture2_title: 'Exquisite embroidery',
+ description:"Stunning London designer clutch - would be perfect summer against a plan white or black dress - or in fall/winter with woollen clothes & accessories. A Temperley take on the season’s nomadic accessories, the Flutura Clutch Bag features bold floral embroidery and subtle tribal touches. With intricate stitching and embellishment, this vibrant bag taps into the collection’s bohemian theme. Wear yours for evening with the story’s matching skirt.
+- Composition: 100% Viscose, Lining: 100% Silk",
+ expiration:Date.today+1.week,
+ minimum_contribution:50.00,
+ owner_id:1,
+ rfid:'1',
+ live: true)
+
+
+ Campaign.create!(
+ header:'Masha Ma limited edition Mini dress US size 6',
+ cost:750,
+ title:"Masha Ma Mini dress US size 6",
+ picture1:'masha1.jpg',
+ picture2:'masha2.jpg',
+ picture1_title:"Great flounce & contrast lining",
+ picture2_title: 'Sharp lines at back',
+ description:"I desperately want to wear this stunning dress - but the price ouch! So anyone willing to share the size 8 (US) with me? I figure we can work out timings to ensure we can wear it to the most important events! The clean, contemporary lines of this dress are enhanced by the vivid yellow colour and the asymmetrical flourish of pale blue. The clever design of the skirt creates contours and volume. To lift the colour, pair with a blue or red Python Nubuck Clutch.This item is available in very Limited quantity. Only 10 pieces per size Worldwide.
+Material: 95% polyester, 5% spandex
+",
+ expiration:Date.today+1.week,
+ minimum_contribution:90.00,
+ owner_id:1,
+ rfid:'1',
+ live: true)
