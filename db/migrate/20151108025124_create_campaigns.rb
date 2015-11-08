@@ -14,6 +14,7 @@ class CreateCampaigns < ActiveRecord::Migration
       t.string :rfid
       t.references :owner, index: true
       t.references :custodian, index: true
+      t.boolean :live, default:false
 
       t.timestamps null: false
     end

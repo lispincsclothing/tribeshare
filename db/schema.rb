@@ -30,8 +30,9 @@ ActiveRecord::Schema.define(version: 20151108025124) do
     t.string   "rfid"
     t.integer  "owner_id"
     t.integer  "custodian_id"
-    t.datetime "created_at",                                   null: false
-    t.datetime "updated_at",                                   null: false
+    t.boolean  "live",                                         default: false
+    t.datetime "created_at",                                                   null: false
+    t.datetime "updated_at",                                                   null: false
   end
 
   add_index "campaigns", ["custodian_id"], name: "index_campaigns_on_custodian_id", using: :btree
