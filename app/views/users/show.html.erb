@@ -56,33 +56,34 @@
 </div>
 
 <div class="container-fluid features">
-  <div class="container ">
-    <% @campaigns.each do |campaign| %>
-    <div class="col-md-12">
-      Campaign:
-      <%= campaign.header %>
-      Custodian:
-      <%= campaign.custodian.id %>
-    </div>
-    <% end %>
+  <div class="container " id="answer_list">
+
   </div>
 </div>
 
 <div class="campaigns" data-campaigns="<%= @campaigns.to_json %>">
 </div>
 
+<div class="container" id="DocumentResults">
+
+</div>
+
 <div class="container-fluid ">
   <div class="container">
     <div class="row">
       <div class="col-md-12 col-sm-12 col-xs-12 spacer"></div>
+      <button type="button" name="button" class="new_a">click here</button>
     </div>
   </div>
 </div>
 
-<script id="display-campaign" type="text/x-handlebars-template">
-<div class="campaign-container" data-campaign-id="{{campaign.id}}">
-  <div>HeaderAJAX: {{campaign.header}} </div>
-  <div>CustodianAJAX: {{campaign.name}} </div>
-  <div>
-<div>
-</script>
+
+
+<script id="new-answer-form" type="text/x-handlebars-template">
+  {{#each this}}
+    <div class="row">
+      <h1>{{header}}</h1>
+      <h1>{{custodian_name}}</h1>
+    </div>
+    {{/each}}
+    </script>

@@ -17,16 +17,16 @@
  *= require_self
  */
 
-/*
+
  * {
    border: red solid 1px;
- }*/
+ }
  #simplify-checkout-frame {
      border: none;
      height: 375px; // Value may need adjusting per your requirement
      overflow: hidden;
  }
- 
+
  .alert {
    font-size: 0.4em;
    color: red;
