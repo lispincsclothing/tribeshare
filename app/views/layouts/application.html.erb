@@ -4,12 +4,41 @@
   <title>Tribe</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Poppins:400,600,700,500,300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,900italic,900,700italic,700,400italic,500,500italic,300,100italic,100,300italic' rel='stylesheet' type='text/css'>
+
   <%= csrf_meta_tags %>
 </head>
 <body>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 <%= yield %>
-
+<div class="container-fluid notes">
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12 notes-bg">
+      <div class="container">
+        <!-- <div class="col-md-8 col-sm-8 col-xs-12"> -->
+        <p>When you find people who
+        </p>
+        <p>not only tolerate your
+        </p>
+        <p>quirks but celebrate
+        </p>
+        <p>them with glad cries of</p>
+        <p>"Me, too!" be sure to
+        </p>
+        <p>cherish them.
+        </p>
+        <p>Because those weirdos
+        </p>
+        <p>are your tribe.</p>
+      </div>
+      <div class="col-md-offset-1 col-md-2 col-md-offset-1 col-sm-offset-1 col-sm-2 col-sm-offset-1 col-xs-12">
+        <!-- <button type="button" class="btn btn-default btneff">Sign In</button> -->
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
