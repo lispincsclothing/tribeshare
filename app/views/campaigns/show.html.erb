@@ -104,7 +104,28 @@
 <!--progress -->
 
 <div class="container-fluid features" id="love-story">
-  
+  <div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="text-center features-text"> Tribal Support  </h2>
+
+<% @campaign.payments.each do |payment| %>
+      <div class="col-md-12 col-sm-12 col-xs-12 icon-box">
+        <div class="col-md-2 col-md-offset-2 col-sm-2 col-xs-12 ">
+          <div class="iconing  roundlg">
+            <%= image_tag(payment.user.image) %></i>
+          </div>
+        </div>
+        <div class="col-md-8 col-sm-8 col-xs-12 icon-text-box top-space">
+          <h4><%= payment.user.name %></h4>
+          <p>Contributed <span> <%= number_to_currency payment.amount %> </span> <%= time_ago_in_words(payment.created_at) %> ago</p>
+        </div>
+      </div>
+<% end %>
+
+    </div>
+  </div>
+</div>
 </div>
 
 <div class="container-fluid work">

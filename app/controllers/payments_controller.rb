@@ -49,7 +49,12 @@ class PaymentsController < ApplicationController
           currency: 'USD'})
       @message = payment['paymentStatus']
       end
+      if payment['paymentStatus'] == 'APPROVED'
+        puts "Payment approved"
+        @message = payment['paymentStatus']
+        Payment.create!(user_id: current_user.id, campaign_id: params["campaign_id"] , amount:payment['amount'].to_i/100)
         redirect_to campaign_path(@campaign)
+      end 
   end
 
   # PATCH/PUT /payments/1
