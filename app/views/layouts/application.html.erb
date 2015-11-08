@@ -4,12 +4,93 @@
   <title>Tribe</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://fonts.googleapis.com/css?family=Poppins:400,600,700,500,300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,900italic,900,700italic,700,400italic,500,500italic,300,100italic,100,300italic' rel='stylesheet' type='text/css'>
+
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-<%= yield %>
+  <header class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 ">
+            <div class="navbar-header">
+              <button class="navbar-toggle menu-button" data-target="#myNavbar" data-toggle="collapse" type="button">
+                <span class="glyphicon glyphicon-align-justify"></span>
+              </button>
+              <a class="navbar-brand logo" href="/">TribalShare</a>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <nav class="collapse navbar-collapse" id="myNavbar" role="navigation">
+              <ul class="nav navbar-nav navbar-right menu">
+                <li>
+                  <a class="page-nav " href="/">Home</a>
+                </li>
+                <li>
+                  <a class="page-nav" href="/campaigns">New Selections</a>
+                </li>
+                <li>
+                    <% if user_signed_in? %>
+                  <a class="page-nav" href= "/users/<%=current_user.id%>"> My items</a>
+                  <%else%>
 
+                  <a class="page-nav disabled" role="presentation" href= "#"> My items</a>
+                     <% end %>
+                </li>
+
+
+
+                <li class="red-text-nav">
+                    <% if current_user %>
+                     <%= image_tag(current_user.image, :class => "round")%><%= current_user.name %>
+                </li>
+                <li>
+                      <%= link_to "Sign out", destroy_user_session_path, :method => :delete  %>
+                    <% else %>
+                      <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook)%>
+                    <% end %>
+                  </li>
+                  <li>
+                    <span class="notice"><%= notice %></span>
+                    <span><class="alert"><%= alert %></span>
+              </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+<div class="top_spacer">
+</div>
+
+<%= yield %>
+<div class="container-fluid notes">
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12 notes-bg">
+      <div class="container">
+        <!-- <div class="col-md-8 col-sm-8 col-xs-12"> -->
+        <p>When you find people who
+        </p>
+        <p>not only tolerate your
+        </p>
+        <p>quirks but celebrate
+        </p>
+        <p>them with glad cries of</p>
+        <p>"Me, too!" be sure to
+        </p>
+        <p>cherish them.
+        </p>
+        <p>Because those weirdos
+        </p>
+        <p>are your tribe.</p>
+      </div>
+      <div class="col-md-offset-1 col-md-2 col-md-offset-1 col-sm-offset-1 col-sm-2 col-sm-offset-1 col-xs-12">
+        <!-- <button type="button" class="btn btn-default btneff">Sign In</button> -->
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
