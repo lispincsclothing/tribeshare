@@ -10,7 +10,7 @@ class CampaignsController < ApplicationController
     respond_to do |format|
         format.html
         format.json do
-          render :json => @campaigns.map {|campaign| {:header => campaign.header, :name => campaign.custodian.name}}
+          render :json => @campaigns.map {|campaign| {:id => campaign.id, :header => campaign.header, :custodianname => campaign.custodian.name}}
         end
     end
   end
