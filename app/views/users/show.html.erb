@@ -56,17 +56,16 @@
 </div>
 
 <div class="container-fluid features">
-  <div class="container" class="campaigns">
-    NEED TO CORRECT LIVE=FALSE
-    <% @campaigns.each do |campaign| %>
-    <div class="col-md-12">
-      Campaign:
-      <%= campaign.header %>
-      Custodian:
-      <%= campaign.custodian.id %>
-    </div>
-    <% end %>
+  <div class="container text-center features-text" id="answer_list">
+<h2>  Your Items & Custody</h2>
   </div>
+</div>
+
+
+<div class="users" data-users="<%= User.all.to_json %>">
+</div>
+
+<div class="container" id="DocumentResults">
 </div>
 
 <div class="container-fluid ">
@@ -77,10 +76,26 @@
   </div>
 </div>
 
-<script id="display-campaign" type="text/x-handlebars-template">
-<div class="campaign-container" data-campaign-id="{{campaign.id}}">
-  <div>HeaderAJAX: {{campaign.header}} </div>
-  <div>CustodianAJAX: {{campaign.name}} </div>
-  <div>
-<div>
-</script>
+
+
+<script id="new-answer-form" type="text/x-handlebars-template">
+  {{#this}}
+    <div class="row">
+      <div class="col-md-2">
+      <div class="iconing3">
+            <img src="/assets/{{image}}" class="roundlg" />
+            </div>
+      </div>
+
+      <div class="col-md-3 icon-text-box">
+        <p>{{header}} in custody of: </p>
+      </div>
+          <div class="col-md-1 icon-text-box">
+        <p><span>{{custodian_name}}</span></p>
+      </div>
+      <div class="col-md-2">
+          <img src="{{custodian_img}}" class="roundlg" />
+      </div>
+    </div>
+    {{/this}}
+    </script>

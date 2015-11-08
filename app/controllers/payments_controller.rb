@@ -30,7 +30,6 @@ class PaymentsController < ApplicationController
     @campaign = Campaign.find(params[:campaign_id])
     if current_user.mastercard_id !=nil
       customer = Simplify::Customer.find(current_user.mastercard_id)
-
         payment = Simplify::Payment.create({
             amount: params['amount'].to_i*100,
             key: ENV['simplify_public_key'],
@@ -48,7 +47,6 @@ class PaymentsController < ApplicationController
           token: params['simplifyToken'],
           description: 'Simplify Rails Example',
           currency: 'USD'})
-
       @message = payment['paymentStatus']
       end
       if payment['paymentStatus'] == 'APPROVED'
