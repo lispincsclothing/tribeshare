@@ -1,69 +1,133 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid">
+<div class="row">
+  <div class="col-md-11 col-md-offset-1 spacer">
+  </div>
+</div>
+</div>
 
-<p>
-  <strong>Header:</strong>
-  <%= @campaign.header %>
-</p>
+<!--  intro top -->
+<div class="container-fluid main" >
+  <div class="row">
+    <div class="col-md-12 countbg">
+      <div class="title">
+        <h2><%= @campaign.header %></h2>
+        <h2 class="cost"> <%= number_to_currency @campaign.cost %></h2>
+      </div>
+      <div class="desc">
+        <div class="col-md-12 col-sm-12 col-xs-12" >
+          <div class="roundlg iconing2" >
+            <%= image_tag(@campaign.owner.image) %>
+          </div>
+          <div id="whiteoverride2">Selected by: <%= @campaign.owner.name %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Cost:</strong>
-  <%= @campaign.cost %>
-</p>
+<div class="container-fluid">
+<div class="row">
+  <div class="col-md-11 col-md-offset-1  blue">
+  </div>
+</div>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @campaign.title %>
-</p>
+<!-- photo images & call to action  -->
+<div class="container-fluid " >
+  <div class="container">
+    <div class="row" >
+      <div class="col-md-12 col-sm-12 col-xs-12 work-list">
+        <h2 class="text-center portfolio-text"><%= @campaign.title %></h2>
 
-<p>
-  <strong>Picture1:</strong>
-  <%= @campaign.picture1 %>
-</p>
+        <div class="col-md-4 col-sm-6 col-xs-12 work-space">
+          <a data-lightbox="image-1" href=<%=asset_path(@campaign.picture1)%>>
+            <div class="featured-img">
+              <img src="<%= asset_path(@campaign.picture1) %>"/>
+            </div>
+            <div class="image-hover">
+              <i class="glyphicon glyphicon-eye-open"></i>
+            </div>
+            <h3><%= @campaign.picture1_title %></h3>
+          </a>
+        </div>
 
-<p>
-  <strong>Picture2:</strong>
-  <%= @campaign.picture2 %>
-</p>
 
-<p>
-  <strong>Picture1 title:</strong>
-  <%= @campaign.picture1_title %>
-</p>
+        <div class="col-md-8 col-sm-6 col-xs-12 work-space">
+          <a href="#love-story">
+            <h3>Progress</h3></a>
+        </div>
 
-<p>
-  <strong>Picture2 title:</strong>
-  <%= @campaign.picture2_title %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @campaign.description %>
-</p>
+<div class="col-md-8 col-sm-6 col-xs-12 work-space">
 
-<p>
-  <strong>Expiration:</strong>
-  <%= @campaign.expiration %>
-</p>
+</div>
 
-<p>
-  <strong>Minimum contribution:</strong>
-  <%= @campaign.minimum_contribution %>
-</p>
+<div class="col-md-8 col-sm-6 col-xs-12 work-space">
+  <div class="col-md-3 col-md-offset-4 col-sm-6 col-xs-12 contribute-box  ">
 
-<p>
-  <strong>Rfid:</strong>
-  <%= @campaign.rfid %>
-</p>
 
-<p>
-  <strong>Owner:</strong>
-  <%= @campaign.owner %>
-</p>
 
-<p>
-  <strong>Custodian:</strong>
-  <%= @campaign.custodian %>
-</p>
+</div>
 
-<%= link_to 'Edit', edit_campaign_path(@campaign) %> |
-<%= link_to 'Back', campaigns_path %>
+
+
+
+
+
+
+
+      </div> <!--work-list -->
+    </div> <!--row -->
+  </div>
+</div>
+<!--progress -->
+
+<div class="container-fluid features" id="love-story">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="text-center features-text"> Tribal Support  </h2>
+
+
+         <div class="col-md-12 col-sm-12 col-xs-12 icon-box">
+          <div class="col-md-2 col-sm-2 col-xs-12">
+            <div class="iconing">
+              <i class="glyphicon glyphicon-asterisk"></i>
+            </div>
+          </div>
+          <div class="col-md-9 col-md-offset-1 col-sm-10 col-xs-12 icon-text-box">
+            <h4>Janet</h4>
+            <p>Contributed $45 on 4/6/2015</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid work">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12 work-list">
+        <h2 class="text-center portfolio-text">Why this is great for our tribe</h2>
+        <div class="col-md-4 col-sm-6 col-xs-12 work-space">
+          <a data-lightbox="image-1" href=<%= asset_path(@campaign.picture2)%>>
+            <div class="featured-img">
+              <img src="<%= asset_path( @campaign.picture2 ) %>" />
+            </div>
+            <div class="image-hover">
+              <i class="glyphicon glyphicon-eye-open"></i>
+            </div>
+            <h3><%= @campaign.picture2_title %></h3>
+          </a>
+        </div>
+        <div class="col-md-8 col-sm-6 col-xs-12 work-space">
+          <%= @campaign.description %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
