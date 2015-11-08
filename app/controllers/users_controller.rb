@@ -1,9 +1,12 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token
+  before_action :authenticate_user!
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :finish_signup]
 
   # GET /users/:id.:format
   def show
     # authorize! :read, @user
+    @user=current_user
   end
 
   # GET /users/:id/edit
@@ -33,7 +36,7 @@ class UsersController < ApplicationController
       if @user.update(user_params)
         @user.skip_reconfirmation!
         sign_in(@user, :bypass => true)
-        redirect_to @user, notice: 'Your profile was successfully updated.'
+        redirect_to root_path, notice: 'Your profile was successfully updated.'
       else
         @show_errors = true
       end
