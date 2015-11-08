@@ -10,6 +10,46 @@ class UsersController < ApplicationController
       # @campaigns = @user.campaigns.where(live: true)
   end
 
+  def newpayment
+
+  end
+
+  def storepayment
+    # puts "hello key", ENV['simplify_public_key']
+    # puts "hello privatekey", ENV['simplify_private_key']
+
+    customer = Simplify::Customer.create({
+        "email" => "newestcustomer@yahoo.com",
+        "key" =>ENV['simplify_public_key'],
+        "name" => "Customer3 Customer3",
+        "card" => {
+           "expMonth" => "11",
+           "expYear" => "19",
+           "cvc" => "123",
+           "number" => "5105105105105100"
+        },
+        "reference" => "customertrial"
+      })
+
+    #   customer = Simplify::Customer.create({
+    #   # "email" => current_user.email,
+    #   "key" => ENV['simplify_public_key'],
+    #   "name" => params['name'],
+    #   "card" => {
+    #      "expMonth" => params['date']['month'],
+    #      "expYear" => params['date']['year'],
+    #      "cvc" => params['cc-cvc'],
+    #      "number" => params['cc-number']
+    #   },
+    #   "reference" => "Tribe Share "
+    # })
+
+      puts "use_id", use_id = customer['id']
+     current_user.update(mastercard_id: customer['id'])
+      # puts "Customer", customer.inspect
+  end
+
+
   # GET /users/:id/edit
   def edit
     # authorize! :update, @user

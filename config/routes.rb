@@ -2,10 +2,15 @@ Rails.application.routes.draw do
   resources :campaigns do
     resources :payments
   end
+
   resources :hooks
   root 'welcome#index'
   devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
   match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
+
+  get 'users/:id/storedpayment' => 'users#newpayment'
+  post'users/:id/storedpayment' => 'users#storepayment'
+
   resources :users, :only => [:show]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -14,7 +19,6 @@ Rails.application.routes.draw do
   # root 'welcome#index'
 
   # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
