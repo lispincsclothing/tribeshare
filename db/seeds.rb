@@ -6,8 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.find(1).update(photon:'mary')
-User.find(2).update(photon:'bry')
+User.find(1).update(photon:'e360039000a47343432313031')
+User.find(2).update(photon:'e2c0021000547343138333038')
 
 Campaign.create!(header:'MILLI MILLU HANDBAG',
 cost:750.00,
