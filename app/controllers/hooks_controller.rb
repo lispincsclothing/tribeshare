@@ -30,7 +30,7 @@ class HooksController < ApplicationController
     # @hook = Hook.new(rfid:params["hook"]["rfid"], photon:params["hook"]["photon"])
     # # {"event"=>"handover_update6", "data"=>"2bc9851e", "published_at"=>"2015-11-08T13:08:00.563Z", "coreid"=>"360039000a47343432313031", "hook"=>{"rfid"=>"2bc9851e", "photon"=>"360039000a47343432313031"}, "controller"=>"hooks", "action"=>"create"}
     custody = Campaign.where(rfid:params["hook"]["rfid"].to_s).first
-    custody.custodian_id=User.where(photon:params["hook"]["photon"].to_s).first!.user_id
+    custody.custodian_id=User.where(photon:params["hook"]["photon"].to_s).first!.id
     campaign.save!
 
     respond_to do |format|
