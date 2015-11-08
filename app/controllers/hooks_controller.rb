@@ -24,6 +24,7 @@ class HooksController < ApplicationController
   # POST /hooks
   # POST /hooks.json
   def create
+    puts params.inspect
     puts "DEBUG_HOOKSCONTROLLER ", params["hook"]["rfid"].to_s, photon:params["hook"]["photon"].to_s
     puts "DEBUG_HOOKSCONTROLLER ", Campaign.where(rfid:params["hook"]["rfid"].to_s), User.where(photon:params["hook"]["photon"].to_s)
     # @hook = Hook.new(rfid:params["hook"]["rfid"], photon:params["hook"]["photon"])
