@@ -33,15 +33,15 @@ class HooksController < ApplicationController
     custody.custodian_id=User.where(photon:params["hook"]["photon"].to_s).first!.id
     custody.save!
 
-    respond_to do |format|
-      if @hook.save
-        format.html { redirect_to @hook, notice: 'Hook was successfully created.' }
-        format.json { render :show, status: :created, location: @hook }
-      else
-        format.html { render :new }
-        format.json { render json: @hook.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+    #   if @hook.save
+    #     format.html { redirect_to @hook, notice: 'Hook was successfully created.' }
+    #     format.json { render :show, status: :created, location: @hook }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @hook.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /hooks/1
