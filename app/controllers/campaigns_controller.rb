@@ -7,11 +7,11 @@ class CampaignsController < ApplicationController
   # GET /campaigns.json
   def index
     @campaigns = Campaign.where(live:false)
-    @campaigns2 = Campaign.where(live:true)
+    # @campaigns2 = Campaign.where(live:true)
     respond_to do |format|
         format.html
         format.json do
-          render :json => @campaigns2.map {|campaign| {:header => campaign.header, :custodian_name => campaign.custodian.name, :campaign_id => campaign.id, :image => campaign.picture1, :custodian_img => campaign.custodian.image}}
+          render :json => @campaigns.map {|campaign| {:header => campaign.header, :custodian_name => campaign.custodian.name, :campaign_id => campaign.id, :image => campaign.picture1, :custodian_img => campaign.custodian.image}}
           # render :json => @campaigns
         end
     end
