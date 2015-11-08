@@ -6,7 +6,11 @@ class CampaignsController < ApplicationController
   # GET /campaigns
   # GET /campaigns.json
   def index
-    @campaigns = Campaign.all.where(live:false)
+    @campaigns = Campaign.where(live:false)
+    respond_to do |format|
+        format.html
+        format.json { render :json => @campaigns.to_json }
+    end
   end
 
   # GET /campaigns/1

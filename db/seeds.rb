@@ -6,6 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+User.find(1).update(photon:'mary')
+User.find(2).update(photon:'bry')
+
 Campaign.create!(header:'MILLI MILLU HANDBAG',
 cost:750.00,
 title:'Amazing handbag from London',
@@ -19,7 +22,7 @@ expiration:Date.today+1.week,
 minimum_contribution:100.00,
 owner_id:1,
 custodian_id:1,
-rfid:'tbd')
+rfid:'mary')
 
 Campaign.create!(
  header:'Leather & Chain Halter Belt SEXXXY',
@@ -49,7 +52,8 @@ Campaign.create!(
  expiration:Date.today+1.week,
  minimum_contribution:90.00,
  owner_id:1,
- rfid:'1')
+ custodian_id: 1,
+ rfid:'2')
 
 
  Campaign.create!(
@@ -64,7 +68,8 @@ Campaign.create!(
  expiration:Date.today+1.week,
  minimum_contribution:7.00,
  owner_id:1,
- rfid:'1')
+ custodian_id: 1,
+ rfid:'3')
 
 
 
@@ -80,7 +85,8 @@ Campaign.create!(
  expiration:Date.today+1.week,
  minimum_contribution:60.00,
  owner_id:1,
- rfid:'1')
+ custodian_id: 1,
+ rfid:'4')
 
  Campaign.create!(
  header:'Exclusive Liberty UK silk scarf',
@@ -94,7 +100,8 @@ Campaign.create!(
  expiration:Date.today+1.week,
  minimum_contribution:90.00,
  owner_id:1,
- rfid:'1',
+ custodian_id: 1,
+ rfid:'5',
  live:true)
 
  Campaign.create!(
@@ -109,7 +116,8 @@ Campaign.create!(
  expiration:Date.today+1.week,
  minimum_contribution:50.00,
  owner_id:1,
- rfid:'1',
+ custodian_id: 1,
+ rfid:'6',
  live: true)
 
  Campaign.create!(
@@ -125,7 +133,8 @@ Campaign.create!(
  expiration:Date.today+1.week,
  minimum_contribution:50.00,
  owner_id:1,
- rfid:'1',
+ custodian_id: 1,
+ rfid:'7',
  live: true)
 
 
@@ -143,5 +152,6 @@ Material: 95% polyester, 5% spandex
  expiration:Date.today+1.week,
  minimum_contribution:90.00,
  owner_id:1,
- rfid:'1',
+ custodian_id: 1,
+ rfid:'8',
  live: true)

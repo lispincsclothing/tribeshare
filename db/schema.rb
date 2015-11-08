@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 20151108035421) do
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
     t.string   "image"
-    t.string   "photon_id"
+    t.string   "photon"
     t.string   "mastercard_id"
   end
 

@@ -61,10 +61,10 @@
 
 <div class="container-fluid features">
   <div class="container">
-
+    NEED TO CORRECT LIVE=FALSE
 <% @campaigns.each do |campaign| %>
 <div class="col-md-12">
-  Campaign: <%= campaign.header %>
+  Campaign: <%= campaign.header %> Custodian: <%= campaign.custodian.id %>
 </div>
   <% end %>
 </div>
