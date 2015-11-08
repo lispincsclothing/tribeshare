@@ -14,3 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require bootstrap.min
+//= require jquery.waypoints.min
+//= require jquerycountto
+//= require lightbox.min
