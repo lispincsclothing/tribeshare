@@ -32,8 +32,8 @@ class HooksController < ApplicationController
 
     respond_to do |format|
       if @hook.save
-        format.html { 'Hook was successfully created.' }
-        format.json { {message:"created successfully!"} }
+        format.html { redirect_to @hook, notice: 'Hook was successfully created.' }
+        format.json { render :show, status: :created, location: @hook }
       else
         format.html { render :new }
         format.json { render json: @hook.errors, status: :unprocessable_entity }
