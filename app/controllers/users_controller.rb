@@ -44,7 +44,7 @@ class UsersController < ApplicationController
     #   "reference" => "Tribe Share "
     # })
 
-      puts "use_id", use_id = customer['id']
+    puts "use_id", use_id = customer['id']
      current_user.update(mastercard_id: customer['id'])
       # puts "Customer", customer.inspect
   end
