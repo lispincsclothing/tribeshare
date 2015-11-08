@@ -59,8 +59,16 @@
 </div>
 
 
+<div class="container-fluid features">
+  <div class="container">
 
-
+<% @campaigns.each do |campaign| %>
+<div class="col-md-12">
+  Campaign: <%= campaign.header %>
+</div>
+  <% end %>
+</div>
+</div>
 
     <div class="container-fluid ">
       <div class="container">

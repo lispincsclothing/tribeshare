@@ -6,8 +6,7 @@ class UsersController < ApplicationController
   # GET /users/:id.:format
   def show
     # authorize! :read, @user
-      # @campaigns = Campaign.all.where(live: true)
-      @campaign = Campaign.find(1)
+      @campaigns = Campaign.all.where(live: true)
   end
 
   def newpayment
