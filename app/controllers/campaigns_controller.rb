@@ -4,7 +4,7 @@ class CampaignsController < ApplicationController
   # GET /campaigns
   # GET /campaigns.json
   def index
-    @campaigns = Campaign.all
+    @campaigns = Campaign.all.where(live:false)
   end
 
   # GET /campaigns/1

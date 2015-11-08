@@ -94,7 +94,8 @@ Campaign.create!(
  expiration:Date.today+1.week,
  minimum_contribution:90.00,
  owner_id:1,
- rfid:'1')
+ rfid:'1',
+ live:true)
 
  Campaign.create!(
  header:'Beaded Caftan - can be worn long & loose or short & tight...',
