@@ -24,8 +24,9 @@ class HooksController < ApplicationController
   # POST /hooks
   # POST /hooks.json
   def create
-    @hook = Hook.new(hook_params)
     puts "HEREIAM", params.inspect
+    @hook = Hook.new(rfid:params["hook"]["rfid"], photon:params["hook"]["photon"])
+    # {"event"=>"handover_update6", "data"=>"2bc9851e", "published_at"=>"2015-11-08T13:08:00.563Z", "coreid"=>"360039000a47343432313031", "hook"=>{"rfid"=>"2bc9851e", "photon"=>"360039000a47343432313031"}, "controller"=>"hooks", "action"=>"create"}
     # Campaign.where(rfid:params[:rfid]) do |campaign|
     #   campaign.custodian=User.where(photon:params[:photon]).first!
     #   campaign.save!
