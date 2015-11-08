@@ -18,7 +18,7 @@ function updateMessages() {
       dataType: 'json',
     })
     .done(function(campaigns) {
-      console.log(campaigns.length);
+      console.log(campaigns);
     })
     .fail(function() {
       console.log("error");

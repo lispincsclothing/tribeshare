@@ -56,8 +56,7 @@
 </div>
 
 <div class="container-fluid features">
-  <div class="container" class="campaigns">
-    NEED TO CORRECT LIVE=FALSE
+  <div class="container ">
     <% @campaigns.each do |campaign| %>
     <div class="col-md-12">
       Campaign:
@@ -67,6 +66,9 @@
     </div>
     <% end %>
   </div>
+</div>
+
+<div class="campaigns" data-campaigns="<%= @campaigns.to_json %>">
 </div>
 
 <div class="container-fluid ">
