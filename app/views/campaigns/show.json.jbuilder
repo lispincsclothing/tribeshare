@@ -1,1 +1,1 @@
-json.extract! @campaign, :id, :header, :cost, :title, :picture1, :picture2, :picture1_title, :picture2_title, :description, :expiration, :minimum_contribution, :rfid, :user_id, :custodian_id, :created_at, :updated_at
+json.extract! @campaign, :id, :header, :cost, :title, :picture1, :picture2, :picture1_title, :picture2_title, :description, :expiration, :minimum_contribution, :rfid, :owner_id, :custodian_id, :created_at, :updated_at

@@ -14,7 +14,7 @@ RSpec.describe "campaigns/index", type: :view do
         :description => "Description",
         :minimum_contribution => "9.99",
         :rfid => "Rfid",
-        :user => nil,
+        :owner => nil,
         :custodian => nil
       ),
       Campaign.create!(
@@ -28,7 +28,7 @@ RSpec.describe "campaigns/index", type: :view do
         :description => "Description",
         :minimum_contribution => "9.99",
         :rfid => "Rfid",
-        :user => nil,
+        :owner => nil,
         :custodian => nil
       )
     ])

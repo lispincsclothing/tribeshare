@@ -12,8 +12,8 @@ class CreateCampaigns < ActiveRecord::Migration
       t.date :expiration
       t.decimal :minimum_contribution, precision: 8, scale: 2
       t.string :rfid
-      t.belongs_to :user, index: true, foreign_key: true
-      t.references :custodian, index: true, foreign_key: true
+      t.references :owner, index: true
+      t.references :custodian, index: true
 
       t.timestamps null: false
     end

@@ -13,7 +13,7 @@ RSpec.describe "campaigns/show", type: :view do
       :description => "Description",
       :minimum_contribution => "9.99",
       :rfid => "Rfid",
-      :user => nil,
+      :owner => nil,
       :custodian => nil
     ))
   end

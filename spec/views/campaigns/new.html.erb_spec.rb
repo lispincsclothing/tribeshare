@@ -13,7 +13,7 @@ RSpec.describe "campaigns/new", type: :view do
       :description => "MyString",
       :minimum_contribution => "9.99",
       :rfid => "MyString",
-      :user => nil,
+      :owner => nil,
       :custodian => nil
     ))
   end
@@ -43,7 +43,7 @@ RSpec.describe "campaigns/new", type: :view do
 
       assert_select "input#campaign_rfid[name=?]", "campaign[rfid]"
 
-      assert_select "input#campaign_user_id[name=?]", "campaign[user_id]"
+      assert_select "input#campaign_owner_id[name=?]", "campaign[owner_id]"
 
       assert_select "input#campaign_custodian_id[name=?]", "campaign[custodian_id]"
     end
