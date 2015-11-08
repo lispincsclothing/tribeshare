@@ -1,5 +1,7 @@
 class PaymentsController < ApplicationController
+  skip_before_action :verify_authenticity_token
   before_action :set_payment, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /payments
   # GET /payments.json

@@ -1,4 +1,6 @@
 class CampaignsController < ApplicationController
+  skip_before_action :verify_authenticity_token
+  before_action :authenticate_user!
   before_action :set_campaign, only: [:show, :edit, :update, :destroy]
 
   # GET /campaigns
