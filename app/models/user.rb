@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
 
   has_many :owners, :class_name => 'Campaign', :foreign_key => 'owner_id'
   has_many :custodians, :class_name => "Campaign", :foreign_key => "custodian_id"
+  has_many :payments, -> { order(created_at: :desc) }
 
   def self.find_for_oauth(auth, signed_in_resource = nil)
 
