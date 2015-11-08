@@ -9,6 +9,9 @@ class User < ActiveRecord::Base
 
   validates_format_of :email, :without => TEMP_EMAIL_REGEX, on: :update
 
+  has_many :campaigns, -> { order(created_at: :desc) }, dependent: :destroy
+  has_many :custodians, :class_name => "Campaign", :foreign_key => "custodian_id"
+
   def self.find_for_oauth(auth, signed_in_resource = nil)
 
     # Get the identity and user if they exist
@@ -35,8 +38,10 @@ class User < ActiveRecord::Base
         user = User.new(
           name: auth.extra.raw_info.name,
           #username: auth.info.nickname || auth.uid,
-          email: email ? email : "#{TEMP_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",
-          password: Devise.friendly_token[0,20]
+          # email: email ? email : "#{TEMP_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",
+          email: auth.info.email,
+          password: Devise.friendly_token[0,20],
+          image: auth.info.image
         )
         user.skip_confirmation!
         user.save!

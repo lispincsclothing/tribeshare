@@ -11,10 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151107224355) do
+ActiveRecord::Schema.define(version: 20151108023152) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "campaigns", force: :cascade do |t|
+    t.string   "header"
+    t.decimal  "cost",                 precision: 8, scale: 2
+    t.string   "title"
+    t.string   "picture1"
+    t.string   "picture2"
+    t.string   "picture1_title"
+    t.string   "picture2_title"
+    t.string   "description"
+    t.date     "expiration"
+    t.decimal  "minimum_contribution", precision: 8, scale: 2
+    t.string   "rfid"
+    t.integer  "user_id"
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
+  end
+
+  add_index "campaigns", ["user_id"], name: "index_campaigns_on_user_id", using: :btree
 
   create_table "hooks", force: :cascade do |t|
     t.string   "rfid"
@@ -59,5 +78,6 @@ ActiveRecord::Schema.define(version: 20151107224355) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "campaigns", "users"
   add_foreign_key "identities", "users"
 end
