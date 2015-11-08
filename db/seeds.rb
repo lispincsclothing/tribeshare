@@ -5,6 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'open-uri'
+require 'json'
 
 User.find(1).update(photon:'360039000a47343432313031')
 User.find(2).update(photon:'2c0021000547343138333038')
@@ -155,3 +157,7 @@ Material: 95% polyester, 5% spandex
  custodian_id: 1,
  rfid:'8',
  live: true)
+
+ json_object = JSON.parse(open("http://dmartin.org:8026/merchantpoi/v1/merchantpoisvc.svc/merchantpoi?PostalCode=10013&format=json&MCCCode=5812").read)
+ json_object = json_object['MerchantPOIList']['MerchantPOIArray']['MerchantPOI']
+ json_object.each{ |poi| Merchantpoi.create!(poi)  }

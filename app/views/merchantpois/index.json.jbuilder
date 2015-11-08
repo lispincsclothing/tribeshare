@@ -1,0 +1,4 @@
+json.array!(@merchantpois) do |merchantpoi|
+  json.extract! merchantpoi, :id, :AggregateMerchantId, :AggregateMerchantName, :CleansedCityName, :CleansedCountryCode, :CleansedMerchantName, :CleansedMerchantPostalCode, :CleansedMerchantStreetAddress, :CleansedMerchantTelephoneNumber, :CleansedStateProvidenceCode, :CuisineCode, :DMACode, :GeocodeQualityIndicator, :HiddenGem, :InBusinessFlag, :Industry, :KeyAggregateMerchantId, :Latitude, :LocalFavorite, :Longitude, :MCCCode, :MSACode, :MerchantCityName, :MerchantCountryCode, :MerchantName, :MerchantPostalCode, :MerchantStateProvidenceCode, :MerchantStreetAddress, :NAICSCode, :NewBusinessFlag, :ParentAggregateMerchantId, :ParentAggregateMerchantName, :PrimaryChannelOfDistribution, :SuperIndustry
+  json.url merchantpoi_url(merchantpoi, format: :json)
+end

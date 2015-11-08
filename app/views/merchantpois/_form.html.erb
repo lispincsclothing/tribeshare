@@ -1,0 +1,149 @@
+<%= form_for(@merchantpoi) do |f| %>
+  <% if @merchantpoi.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@merchantpoi.errors.count, "error") %> prohibited this merchantpoi from being saved:</h2>
+
+      <ul>
+      <% @merchantpoi.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :AggregateMerchantId %><br>
+    <%= f.text_field :AggregateMerchantId %>
+  </div>
+  <div class="field">
+    <%= f.label :AggregateMerchantName %><br>
+    <%= f.text_field :AggregateMerchantName %>
+  </div>
+  <div class="field">
+    <%= f.label :CleansedCityName %><br>
+    <%= f.text_field :CleansedCityName %>
+  </div>
+  <div class="field">
+    <%= f.label :CleansedCountryCode %><br>
+    <%= f.text_field :CleansedCountryCode %>
+  </div>
+  <div class="field">
+    <%= f.label :CleansedMerchantName %><br>
+    <%= f.text_field :CleansedMerchantName %>
+  </div>
+  <div class="field">
+    <%= f.label :CleansedMerchantPostalCode %><br>
+    <%= f.text_field :CleansedMerchantPostalCode %>
+  </div>
+  <div class="field">
+    <%= f.label :CleansedMerchantStreetAddress %><br>
+    <%= f.text_field :CleansedMerchantStreetAddress %>
+  </div>
+  <div class="field">
+    <%= f.label :CleansedMerchantTelephoneNumber %><br>
+    <%= f.text_field :CleansedMerchantTelephoneNumber %>
+  </div>
+  <div class="field">
+    <%= f.label :CleansedStateProvidenceCode %><br>
+    <%= f.text_field :CleansedStateProvidenceCode %>
+  </div>
+  <div class="field">
+    <%= f.label :CuisineCode %><br>
+    <%= f.text_field :CuisineCode %>
+  </div>
+  <div class="field">
+    <%= f.label :DMACode %><br>
+    <%= f.text_field :DMACode %>
+  </div>
+  <div class="field">
+    <%= f.label :GeocodeQualityIndicator %><br>
+    <%= f.text_field :GeocodeQualityIndicator %>
+  </div>
+  <div class="field">
+    <%= f.label :HiddenGem %><br>
+    <%= f.text_field :HiddenGem %>
+  </div>
+  <div class="field">
+    <%= f.label :InBusinessFlag %><br>
+    <%= f.text_field :InBusinessFlag %>
+  </div>
+  <div class="field">
+    <%= f.label :Industry %><br>
+    <%= f.text_field :Industry %>
+  </div>
+  <div class="field">
+    <%= f.label :KeyAggregateMerchantId %><br>
+    <%= f.text_field :KeyAggregateMerchantId %>
+  </div>
+  <div class="field">
+    <%= f.label :Latitude %><br>
+    <%= f.text_field :Latitude %>
+  </div>
+  <div class="field">
+    <%= f.label :LocalFavorite %><br>
+    <%= f.text_field :LocalFavorite %>
+  </div>
+  <div class="field">
+    <%= f.label :Longitude %><br>
+    <%= f.text_field :Longitude %>
+  </div>
+  <div class="field">
+    <%= f.label :MCCCode %><br>
+    <%= f.text_field :MCCCode %>
+  </div>
+  <div class="field">
+    <%= f.label :MSACode %><br>
+    <%= f.text_field :MSACode %>
+  </div>
+  <div class="field">
+    <%= f.label :MerchantCityName %><br>
+    <%= f.text_field :MerchantCityName %>
+  </div>
+  <div class="field">
+    <%= f.label :MerchantCountryCode %><br>
+    <%= f.text_field :MerchantCountryCode %>
+  </div>
+  <div class="field">
+    <%= f.label :MerchantName %><br>
+    <%= f.text_field :MerchantName %>
+  </div>
+  <div class="field">
+    <%= f.label :MerchantPostalCode %><br>
+    <%= f.text_field :MerchantPostalCode %>
+  </div>
+  <div class="field">
+    <%= f.label :MerchantStateProvidenceCode %><br>
+    <%= f.text_field :MerchantStateProvidenceCode %>
+  </div>
+  <div class="field">
+    <%= f.label :MerchantStreetAddress %><br>
+    <%= f.text_field :MerchantStreetAddress %>
+  </div>
+  <div class="field">
+    <%= f.label :NAICSCode %><br>
+    <%= f.text_field :NAICSCode %>
+  </div>
+  <div class="field">
+    <%= f.label :NewBusinessFlag %><br>
+    <%= f.text_field :NewBusinessFlag %>
+  </div>
+  <div class="field">
+    <%= f.label :ParentAggregateMerchantId %><br>
+    <%= f.text_field :ParentAggregateMerchantId %>
+  </div>
+  <div class="field">
+    <%= f.label :ParentAggregateMerchantName %><br>
+    <%= f.text_field :ParentAggregateMerchantName %>
+  </div>
+  <div class="field">
+    <%= f.label :PrimaryChannelOfDistribution %><br>
+    <%= f.text_field :PrimaryChannelOfDistribution %>
+  </div>
+  <div class="field">
+    <%= f.label :SuperIndustry %><br>
+    <%= f.text_field :SuperIndustry %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

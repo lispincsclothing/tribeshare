@@ -1,0 +1,91 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Merchantpois</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Aggregatemerchantid</th>
+      <th>Aggregatemerchantname</th>
+      <th>Cleansedcityname</th>
+      <th>Cleansedcountrycode</th>
+      <th>Cleansedmerchantname</th>
+      <th>Cleansedmerchantpostalcode</th>
+      <th>Cleansedmerchantstreetaddress</th>
+      <th>Cleansedmerchanttelephonenumber</th>
+      <th>Cleansedstateprovidencecode</th>
+      <th>Cuisinecode</th>
+      <th>Dmacode</th>
+      <th>Geocodequalityindicator</th>
+      <th>Hiddengem</th>
+      <th>Inbusinessflag</th>
+      <th>Industry</th>
+      <th>Keyaggregatemerchantid</th>
+      <th>Latitude</th>
+      <th>Localfavorite</th>
+      <th>Longitude</th>
+      <th>Mcccode</th>
+      <th>Msacode</th>
+      <th>Merchantcityname</th>
+      <th>Merchantcountrycode</th>
+      <th>Merchantname</th>
+      <th>Merchantpostalcode</th>
+      <th>Merchantstateprovidencecode</th>
+      <th>Merchantstreetaddress</th>
+      <th>Naicscode</th>
+      <th>Newbusinessflag</th>
+      <th>Parentaggregatemerchantid</th>
+      <th>Parentaggregatemerchantname</th>
+      <th>Primarychannelofdistribution</th>
+      <th>Superindustry</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @merchantpois.each do |merchantpoi| %>
+      <tr>
+        <td><%= merchantpoi.AggregateMerchantId %></td>
+        <td><%= merchantpoi.AggregateMerchantName %></td>
+        <td><%= merchantpoi.CleansedCityName %></td>
+        <td><%= merchantpoi.CleansedCountryCode %></td>
+        <td><%= merchantpoi.CleansedMerchantName %></td>
+        <td><%= merchantpoi.CleansedMerchantPostalCode %></td>
+        <td><%= merchantpoi.CleansedMerchantStreetAddress %></td>
+        <td><%= merchantpoi.CleansedMerchantTelephoneNumber %></td>
+        <td><%= merchantpoi.CleansedStateProvidenceCode %></td>
+        <td><%= merchantpoi.CuisineCode %></td>
+        <td><%= merchantpoi.DMACode %></td>
+        <td><%= merchantpoi.GeocodeQualityIndicator %></td>
+        <td><%= merchantpoi.HiddenGem %></td>
+        <td><%= merchantpoi.InBusinessFlag %></td>
+        <td><%= merchantpoi.Industry %></td>
+        <td><%= merchantpoi.KeyAggregateMerchantId %></td>
+        <td><%= merchantpoi.Latitude %></td>
+        <td><%= merchantpoi.LocalFavorite %></td>
+        <td><%= merchantpoi.Longitude %></td>
+        <td><%= merchantpoi.MCCCode %></td>
+        <td><%= merchantpoi.MSACode %></td>
+        <td><%= merchantpoi.MerchantCityName %></td>
+        <td><%= merchantpoi.MerchantCountryCode %></td>
+        <td><%= merchantpoi.MerchantName %></td>
+        <td><%= merchantpoi.MerchantPostalCode %></td>
+        <td><%= merchantpoi.MerchantStateProvidenceCode %></td>
+        <td><%= merchantpoi.MerchantStreetAddress %></td>
+        <td><%= merchantpoi.NAICSCode %></td>
+        <td><%= merchantpoi.NewBusinessFlag %></td>
+        <td><%= merchantpoi.ParentAggregateMerchantId %></td>
+        <td><%= merchantpoi.ParentAggregateMerchantName %></td>
+        <td><%= merchantpoi.PrimaryChannelOfDistribution %></td>
+        <td><%= merchantpoi.SuperIndustry %></td>
+        <td><%= link_to 'Show', merchantpoi %></td>
+        <td><%= link_to 'Edit', edit_merchantpoi_path(merchantpoi) %></td>
+        <td><%= link_to 'Destroy', merchantpoi, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Merchantpoi', new_merchantpoi_path %>

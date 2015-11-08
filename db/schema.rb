@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151108035421) do
+ActiveRecord::Schema.define(version: 20151108155832) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,44 @@ ActiveRecord::Schema.define(version: 20151108035421) do
   end
 
   add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
+
+  create_table "merchantpois", force: :cascade do |t|
+    t.string   "AggregateMerchantId"
+    t.string   "AggregateMerchantName"
+    t.string   "CleansedCityName"
+    t.string   "CleansedCountryCode"
+    t.string   "CleansedMerchantName"
+    t.string   "CleansedMerchantPostalCode"
+    t.string   "CleansedMerchantStreetAddress"
+    t.string   "CleansedMerchantTelephoneNumber"
+    t.string   "CleansedStateProvidenceCode"
+    t.string   "CuisineCode"
+    t.string   "DMACode"
+    t.string   "GeocodeQualityIndicator"
+    t.string   "HiddenGem"
+    t.string   "InBusinessFlag"
+    t.string   "Industry"
+    t.string   "KeyAggregateMerchantId"
+    t.string   "Latitude"
+    t.string   "LocalFavorite"
+    t.string   "Longitude"
+    t.string   "MCCCode"
+    t.string   "MSACode"
+    t.string   "MerchantCityName"
+    t.string   "MerchantCountryCode"
+    t.string   "MerchantName"
+    t.string   "MerchantPostalCode"
+    t.string   "MerchantStateProvidenceCode"
+    t.string   "MerchantStreetAddress"
+    t.string   "NAICSCode"
+    t.string   "NewBusinessFlag"
+    t.string   "ParentAggregateMerchantId"
+    t.string   "ParentAggregateMerchantName"
+    t.string   "PrimaryChannelOfDistribution"
+    t.string   "SuperIndustry"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+  end
 
   create_table "payments", force: :cascade do |t|
     t.decimal  "amount",      precision: 8, scale: 2
