@@ -24,11 +24,11 @@ class HooksController < ApplicationController
   # POST /hooks
   # POST /hooks.json
   def create
-    # @hook = Hook.new(hook_params)
-    Campaign.where(rfid:params[:rfid]) do |campaign|
-      campaign.custodian=User.where(photon:params[:photon]).first!
-      campaign.save!
-    end
+    @hook = Hook.new(hook_params)
+    # Campaign.where(rfid:params[:rfid]) do |campaign|
+    #   campaign.custodian=User.where(photon:params[:photon]).first!
+    #   campaign.save!
+    # end
 
     respond_to do |format|
       if @hook.save
