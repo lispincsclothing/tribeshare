@@ -1,11 +1,11 @@
 {
-    "eventName": "handover_update",
+    "eventName": "handover_update3",
     "url": "https://tribeshare.herokuapp.com/hooks",
     "requestType": "POST",
 
-    "query": {
-                "rfid": "{{SPARK_EVENT_VALUE}}",
-                "photon": "{{SPARK_CORE_ID}}"
+    "form": {
+                "hook[rfid]": "{{SPARK_EVENT_VALUE}}",
+                "hook[photon]": "{{SPARK_CORE_ID}}"
     },
     "mydevices": true
 }
