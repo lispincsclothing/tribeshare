@@ -24,11 +24,12 @@ class HooksController < ApplicationController
   # POST /hooks
   # POST /hooks.json
   def create
-    puts "DEBUG_HOOKSCONTROLLER ", params.inspect
+    puts "DEBUG_HOOKSCONTROLLER ", params["hook"]["rfid"].to_s, photon:params["hook"]["photon"].to_s
+    puts "DEBUG_HOOKSCONTROLLER ", Campaign.where(rfid:params["hook"]["rfid"].to_s), User.where(photon:params["hook"]["photon"].to_s)
     # @hook = Hook.new(rfid:params["hook"]["rfid"], photon:params["hook"]["photon"])
     # # {"event"=>"handover_update6", "data"=>"2bc9851e", "published_at"=>"2015-11-08T13:08:00.563Z", "coreid"=>"360039000a47343432313031", "hook"=>{"rfid"=>"2bc9851e", "photon"=>"360039000a47343432313031"}, "controller"=>"hooks", "action"=>"create"}
-    Campaign.where(rfid:params["hook"]["rfid"]) do |campaign|
-      campaign.custodian=User.where(photon:params["hook"]["photon"]).first!
+    Campaign.where(rfid:params["hook"]["rfid"].to_s) do |campaign|
+      campaign.custodian=User.where(photon:params["hook"]["photon"].to_s).first!
       campaign.save!
     end
 
