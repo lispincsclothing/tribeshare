@@ -60,23 +60,43 @@
 
 
 <div class="col-md-8 col-sm-6 col-xs-12 work-space">
+    <div id="backing">
+    <ul>
+      <li class="stats" id="backers">
+        <%= @campaign.payments.count %>
+        <span>backers</span>
+      </li>
+      <li class="stats">
+        <%= number_to_currency @campaign.payments.sum(:amount) %>
+        <span>of <%= number_to_currency @campaign.cost %></span>
+      </li>
+        <li class="stats" id="days">
+            <%= (@campaign.expiration - Date.today).to_i %>
+            <span>days left</span>
+          </li>
+    </ul>
 
+
+      <div id='progress_bg' class='small'>
+        <div id='progress' class='' style='width: <%= number_to_percentage (@campaign.payments.sum(:amount)/@campaign.cost)*100 %>'>
+        </div>
+      </div>
+  </div>
 </div>
 
 <div class="col-md-8 col-sm-6 col-xs-12 work-space">
   <div class="col-md-3 col-md-offset-4 col-sm-6 col-xs-12 contribute-box  ">
 
 
+    <%= link_to "Buy in now!", new_campaign_payment_path(@campaign),  id: "whiteoverride", role:"button"%>
+    <!-- <a href ="/campaigns/2/payments/new" class="white-text" role="button">  Buy in now!</a> -->
+    <!--  add live campaign id here & link to payments new-->
+  </div>
+  <div class="col-md-2 col-md-offset-5 col-sm-6 col-xs-12 red-text text-center ">
+      <%= number_to_currency @campaign.minimum_contribution %> min
+  </div>
 
 </div>
-
-
-
-
-
-
-
-
       </div> <!--work-list -->
     </div> <!--row -->
   </div>
@@ -84,27 +104,7 @@
 <!--progress -->
 
 <div class="container-fluid features" id="love-story">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h2 class="text-center features-text"> Tribal Support  </h2>
-
-
-         <div class="col-md-12 col-sm-12 col-xs-12 icon-box">
-          <div class="col-md-2 col-sm-2 col-xs-12">
-            <div class="iconing">
-              <i class="glyphicon glyphicon-asterisk"></i>
-            </div>
-          </div>
-          <div class="col-md-9 col-md-offset-1 col-sm-10 col-xs-12 icon-text-box">
-            <h4>Janet</h4>
-            <p>Contributed $45 on 4/6/2015</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
+  
 </div>
 
 <div class="container-fluid work">

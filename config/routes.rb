@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :payments
-  resources :campaigns
+  resources :campaigns do
+    resources :payments
+  end
   resources :hooks
   root 'welcome#index'
   devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
