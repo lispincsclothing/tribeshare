@@ -82,9 +82,16 @@
 <script id="new-answer-form" type="text/x-handlebars-template">
   {{#each this}}
     <div class="row">
-      <h1>{{header}}</h1>
-      <h1>{{custodian_name}}</h1>
-      <h1>{{image}}</h1>
+      <div class="col-md-2">
+      <div class="iconing3">
+            <img src="/assets/{{image}}" class="roundlg" />
+            </div>
+      </div>
+      <div class="col-md-10 icon-text-box">
+        <p>{{header}} in custody of: <span>{{custodian_name}}</span></p>
+
+      </div>
+
     </div>
     {{/each}}
     </script>
