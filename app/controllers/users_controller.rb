@@ -18,27 +18,32 @@ class UsersController < ApplicationController
     puts "hello privatekey", ENV['simplify_private_key']
 
     customer = Simplify::Customer.create({
-        "email" => "newestcustomer@yahoo.com",
+        "email" => "#{params['email']}",
         "key" => ENV['simplify_public_key'],
-        "name" => "Customer3 Customer3",
+        "name" => "#{params['name']}",
         "card" => {
-           "expMonth" => "11",
-           "expYear" => "19",
-           "cvc" => "123",
-           "number" => "5105105105105100"
+           "expMonth" => params['date']['month'],
+           "expYear" =>  "#{params['date']['year'].last(2)}",
+           "cvc" => params['cc-cvc'],
+           "number" => "#{params['cc-number']}"
         },
         "reference" => "customertrial"
       })
 
+
+
+    # puts "responseBOdy:", response.body
+    # puts "responseHeader:", response.header
+    # p "response", response
     #   customer = Simplify::Customer.create({
-    #   # "email" => current_user.email,
-    #   "key" => ENV['simplify_public_key'],
-    #   "name" => params['name'],
+    #   "email" => "#{params['email']}",
+    #   "key" => "#{ENV['simplify_public_key']}",
+    #   "name" => "#{params['name']}",
     #   "card" => {
-    #      "expMonth" => params['date']['month'],
-    #      "expYear" => params['date']['year'],
-    #      "cvc" => params['cc-cvc'],
-    #      "number" => params['cc-number']
+    #      "expMonth" => "#{params['date']['month']}",
+    #      "expYear" => "#{params['date']['year']}",
+    #      "cvc" => "#{params['cc-cvc']}",
+    #      "number" => "#{params['cc-number']}"
     #   },
     #   "reference" => "Tribe Share "
     # })
