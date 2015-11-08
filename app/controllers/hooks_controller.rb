@@ -32,7 +32,7 @@ class HooksController < ApplicationController
 
     respond_to do |format|
       if @hook.save
-        format.html { redirect_to @hook, notice: 'Hook was successfully created.' }
+        format.html { 'Hook was successfully created.' }
         format.json { {message:"created successfully!"} }
       else
         format.html { render :new }
