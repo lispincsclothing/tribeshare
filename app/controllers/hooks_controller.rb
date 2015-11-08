@@ -69,6 +69,6 @@ class HooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hook_params
-      params.require(:hook).permit(:rfid, :photon)
+      params.require(:hook).permit(:rfid, :photon_id)
     end
 end

@@ -1,4 +1,10 @@
+.top_padding {
+  padding-top: 30px;
+}
 
+.bottom_padding {
+  padding-bottom: 30px;
+}
 .spacer {
   padding-top: 30px;
 }
@@ -689,3 +695,21 @@
   #tiny {
  	 font-size: .5em;
   }
+
+  .round img {
+        // display: block;
+          // Stretch
+          //         height: 100%;
+          //         width: 100%;
+
+            min-width: 100%;
+            min-height: 100%;
+            }
+
+            .round {
+        border-radius: 50%;
+        overflow: hidden;
+        width: 40px;
+        height: 40px;
+
+        }
