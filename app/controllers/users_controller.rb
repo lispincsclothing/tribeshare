@@ -6,7 +6,8 @@ class UsersController < ApplicationController
   # GET /users/:id.:format
   def show
     # authorize! :read, @user
-    @user=current_user
+      @user=current_user
+      # @campaigns = @user.campaigns.where(live: true)
   end
 
   # GET /users/:id/edit

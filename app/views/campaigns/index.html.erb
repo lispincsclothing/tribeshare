@@ -27,7 +27,32 @@
 
 
 
+<div class="container-fluid features">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 selection_box">
+        <h2 class="text-center features-text">Selections not yet purchased</h2>
+        <% @campaigns.each do |campaign|  %>
+        <div class="col-md-6 col-sm-12 col-xs-12 icon-box ">
+          <div class="col-md-2 col-sm-2 col-xs-12">
+            <div class="iconing3">
+            <a href="/campaigns/<%= campaign.id %>"><img src=<%=asset_path(campaign.picture1)%> class="roundlg" /></a>
+            <!-- erb #link_to 'Show', campaign erb -->
+            </div>
+          </div>
+          <div class="col-md-9 col-md-offset-1 col-sm-10 col-xs-12 icon-text-box">
+            <a href="/campaigns/<%= campaign.id %>">  <h4><%= campaign.header %></h4> </a>
+            <p> <%= campaign.title%></p>
+          </div>
+        </div>
+        <% end %>
 
+
+
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
