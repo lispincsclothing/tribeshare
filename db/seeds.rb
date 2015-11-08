@@ -37,19 +37,7 @@ Campaign.create!(
  rfid:'1')
 
 
- Campaign.create!(Campaign.create!(
- header:'Exclusive Liberty UK silk scarf',
- cost:790.00,
- title:"Rubens' bouquet silk scarf by Liberty UK",
- picture1:'liberty1.jpg',
- picture2:'liberty2.jpg',
- picture1_title:"Rubens' silk scarf by Liberty",
- picture2_title: 'Perfect to dress up all black outfit',
- description:"Liberty UK scarf => A luxurious homage to the Dutch masters, this Liberty London scarf collection brings back pieces from the design archive to an exciting new finish. Named after the great Peter Paul Rubens, this vibrant piece showcases a bouquet with colourful paint splashes. Double layered with silk chiffon and silk satin, this shawl is a superbly soft rendition of historical style.",
- expiration:Date.today+1.week,
- minimum_contribution:90.00,
- user_id:1,
- rfid_tag_value:'1')
+ Campaign.create!(
  header:'Exclusive Liberty UK silk scarf',
  cost:790.00,
  title:"Rubens' bouquet silk scarf by Liberty UK",
@@ -62,3 +50,33 @@ Campaign.create!(
  minimum_contribution:90.00,
  owner_id:1,
  rfid:'1')
+
+ Campaign.create!(
+ header:'Suqqu eyeshadow compact',
+ cost:70.00,
+ title:"Not available in USA Suqqu eyeshadow",
+ picture1:'suqqu1.jpg',
+ picture2:'suqqu1.jpg',
+ picture1_title:"SUQQU Blend color eyeshadow",
+ picture2_title: 'Palette in 02',
+ description:"I desperately want to try cult brand Suqqu but it is only available from Selfridges in London or Japan. So is anyone willing to try it out with me? I will happily buy 50% of the cost but I'd love to share the cost and trial out with some other makeup junkie tribies :-)) For $7 you can try it out which is pretty low cost for such a cult brand! Suqqu's compact four-in-one eyeshadow palette contains innovative silicone-coated powders and amino acid-coated pigments developed to promote healthy skin and a long-lasting finish. It spreads smoothly, giving depth and beautiful graduation onto the lids to bring out your eyes.",
+ expiration:Date.today+1.week,
+ minimum_contribution:7.00,
+ owner_id:1,
+ rfid:'1')
+
+ Campaign.create!(
+ header:'Montecristi hat from Napa Valley',
+ cost:648.00,
+ title:"Handmade Panama hat Extra Extra Fino Natural",
+ picture1:'panama1.jpg',
+ picture2:'panama2.jpg',
+ picture1_title:"Hand-woven to perfection",
+ picture2_title: 'Extra Extra Fino Natural',
+ description:"These are the most amazing panama hats and hand-made in Napa Valley. Would be amazing for summer! Hand-woven to perfection this hat is beige Toquilla straw with a brown folded elegant silk band.",
+ expiration:Date.today+1.week,
+ minimum_contribution:60.00,
+ owner_id:1,
+ rfid:'1')
+
+ 
